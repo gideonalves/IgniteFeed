@@ -4,9 +4,17 @@ import { Avatar } from './Avatar'
 
 
 export function Comment({content}) {
+
+    function handleDeleteComment() {
+        console.log('deletar');
+    }
+
     return (
-        <div className={styles.comment}>
-            <Avatar hasBorder={false} src="https://avatars.githubusercontent.com/u/66545644?v=4" />
+        <div className={styles.comment}>            
+            <Avatar 
+                hasBorder={false} 
+                src="https://avatars.githubusercontent.com/u/66545644?v=4" 
+            />
 
             <div className={styles.commentBox}>
                 <div className={styles.commentContent}>
@@ -18,7 +26,9 @@ export function Comment({content}) {
                             </time>
                         </div>
 
-                        <button title='Deletar comentário'>
+                        <button 
+                            onClick={handleDeleteComment}
+                            title='Deletar comentário'>
                             <Trash size={24}/> 
                         </button>
                     </header>
@@ -27,10 +37,10 @@ export function Comment({content}) {
                 </div>
 
                 <footer>
-                        <button>
-                            <ThumbsUp />
-                            Aplaudir <span>20</span>
-                        </button>
+                    <button>
+                      <ThumbsUp />
+                       Aplaudir <span>20</span>
+                    </button>
                 </footer>
             </div>
         </div>
